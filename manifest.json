@@ -1,0 +1,37 @@
+{
+    "manifest_version": 3,
+    "name": "Chess Skins",
+    "version": "1.0",
+    "description": "Changes pieces, board, and background of chess.com",
+    "icons": {
+        "16": "images/chess-skins-logo_16.png",
+        "32": "images/chess-skins-logo_32.png",
+        "48": "images/chess-skins-logo_48.png",
+        "128": "images/chess-skins-logo_128.png"
+    },
+    "content_scripts": [
+      {
+        "matches": ["https://www.chess.com/*"],
+        "js": ["content.js"],
+        "type": "module"
+      }
+    ],
+    "web_accessible_resources": [
+        {
+          "resources": [
+            "images/bb.png"
+          ],
+          "matches": ["https://www.chess.com/*"]
+        }
+    ],
+    "permissions": [
+      "storage",
+      "unlimitedStorage"
+    ],
+    "action": {
+      "default_popup": "popup.html"
+    },
+
+    "options_page": "options.html"
+  }
+  

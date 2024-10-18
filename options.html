@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Upload Chess Skins</title>
+    <style>
+    body {
+        font-family: 'Helvetica Neue', Arial, sans-serif;
+        background-color: #2c2b29;
+        margin: 0;
+        padding: 20px;
+        text-align: center;
+        color: #ffffff;
+    }
+
+    h1 {
+        font-size: 24px;
+        color: #ffffff;
+        margin-bottom: 20px;
+    }
+
+    #skinUploadSection {
+        margin: 0 auto;
+        max-width: 900px;
+    }
+
+    .pieceRow {
+        display: flex;
+        justify-content: space-around; /* Adjusts spacing between pieces */
+        margin-bottom: 20px; /* Space between rows */
+    }
+
+    .piece {
+        position: relative;
+        display: flex;
+        flex-direction: column; /* Stack elements vertically */
+        align-items: center; /* Center horizontally */
+        justify-content: center;
+    }
+
+    .piece .preview {
+        width: 120px; /* Set a default width for all preview boxes */
+        height: 80px; /* Preview height */
+        border: 1px solid #666;
+        border-radius: 4px;
+        background-color: #4b4847;
+        margin-top: 8px;
+        background-size: cover;
+        background-position: center;
+    }
+
+    .piece label,
+    .piece .file-input-label,
+    .piece .clearButton {
+        width: 120px; /* Match the width of the preview box */
+        text-align: center;
+    }
+
+    /* Hide the default file input button */
+    .hidden-file-input {
+        display: none;
+    }
+
+    /* Custom file input button */
+    .file-input-label {
+        padding: 8px;
+        border: none; /* Remove default border */
+        border-radius: 4px;
+        background-color: #69923e; /* Match the upload button color */
+        color: #ffffff; /* Text color */
+        cursor: pointer;
+        box-shadow: 0 2px 5px #4b4847;
+        transition: background-color 0.3s;
+    }
+
+    .file-input-label:hover {
+        background-color: #4e7837; /* Darken on hover */
+    }
+
+    .clearButton {
+        padding: 8px;
+        font-size: 16px;
+        background-color: #923e3e;
+        color: #ffffff;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+        box-shadow: 0 2px 5px #4b4847;
+        width: 120px; /* Match the width of the other elements */
+        margin-top: 8px;
+    }
+
+    .clearButton:hover {
+        background-color: #783737;
+    }
+
+    #boardPreview {
+        width: 140px; /* Set specific width for the board preview */
+        height: 140px; /* Adjust the height accordingly */
+        border-radius: 6px;
+        border: 2px solid #666;
+        color: #ffffff;
+        margin-top: 20px;
+        background-color: #4b4847;
+        background-size: cover;
+        background-position: center;
+        margin: 0 auto; /* Center the board preview */
+    }
+
+    #editSkinButton {
+        padding: 10px 20px;
+        font-size: 16px;
+        background-color: #69923e;
+        color: #ffffff;
+        border: none;
+        border-radius: 6px;
+        cursor: pointer;
+        box-shadow: 0 2px 5px #4b4847;
+    }
+
+    #editSkinButton:hover {
+        background-color: #4e7837;
+    }
+    </style>
+</head>
+<body>
+    <h1>Upload Chess Skins</h1>
+    
+    <!-- Container for all piece and board upload inputs -->
+    <div id="skinUploadSection">
+        <!-- White pieces -->
+        <div class="pieceRow">
+            <div class="piece">
+                <label for="wk">White King</label>
+                <input type="file" id="wk" class="hidden-file-input" accept="image/*" />
+                <label for="wk" class="file-input-label">Choose File</label>
+                <div class="preview" id="wkPreview"></div>
+                <button type="button" class="clearButton" data-target="wk">Clear Field</button>
+            </div>
+            <div class="piece">
+                <label for="wq">White Queen</label>
+                <input type="file" id="wq" class="hidden-file-input" accept="image/*" />
+                <label for="wq" class="file-input-label">Choose File</label>
+                <div class="preview" id="wqPreview"></div>
+                <button type="button" class="clearButton" data-target="wq">Clear Field</button>
+            </div>
+            <div class="piece">
+                <label for="wr">White Rook</label>
+                <input type="file" id="wr" class="hidden-file-input" accept="image/*" />
+                <label for="wr" class="file-input-label">Choose File</label>
+                <div class="preview" id="wrPreview"></div>
+                <button type="button" class="clearButton" data-target="wr">Clear Field</button>
+
+            </div>
+            <div class="piece">
+                <label for="wb">White Bishop</label>
+                <input type="file" id="wb" class="hidden-file-input" accept="image/*" />
+                <label for="wb" class="file-input-label">Choose File</label>
+                <div class="preview" id="wbPreview"></div>
+                <button type="button" class="clearButton" data-target="wb">Clear Field</button>
+            </div>
+            <div class="piece">
+                <label for="wn">White Knight</label>
+                <input type="file" id="wn" class="hidden-file-input" accept="image/*" />
+                <label for="wn" class="file-input-label">Choose File</label>
+                <div class="preview" id="wnPreview"></div>
+                <button type="button" class="clearButton" data-target="wn">Clear Field</button>
+
+            </div>
+            <div class="piece">
+                <label for="wp">White Pawn</label>
+                <input type="file" id="wp" class="hidden-file-input" accept="image/*" />
+                <label for="wp" class="file-input-label">Choose File</label>
+                <div class="preview" id="wpPreview"></div>
+                <button type="button" class="clearButton" data-target="wp">Clear Field</button>
+
+            </div>
+        </div>
+        <br>
+        <!-- Black pieces -->
+        <div class="pieceRow">
+            <div class="piece">
+                <label for="bk">Black King</label>
+                <input type="file" id="bk" class="hidden-file-input" accept="image/*" />
+                <label for="bk" class="file-input-label">Choose File</label>
+                <div class="preview" id="bkPreview"></div>
+                <button type="button" class="clearButton" data-target="bk">Clear Field</button>
+            </div>
+            <div class="piece">
+                <label for="bq">Black Queen</label>
+                <input type="file" id="bq" class="hidden-file-input" accept="image/*" />
+                <label for="bq" class="file-input-label">Choose File</label>
+                <div class="preview" id="bqPreview"></div>
+                <button type="button" class="clearButton" data-target="bq">Clear Field</button>
+            </div>
+            <div class="piece">
+                <label for="br">Black Rook</label>
+                <input type="file" id="br" class="hidden-file-input" accept="image/*" />
+                <label for="br" class="file-input-label">Choose File</label>
+                <div class="preview" id="brPreview"></div>
+                <button type="button" class="clearButton" data-target="br">Clear Field</button>
+            </div>
+            <div class="piece">
+                <label for="bb">Black Bishop</label>
+                <input type="file" id="bb" class="hidden-file-input" accept="image/*" />
+                <label for="bb" class="file-input-label">Choose File</label>
+                <div class="preview" id="bbPreview"></div>
+                <button type="button" class="clearButton" data-target="bb">Clear Field</button>
+            </div>
+            <div class="piece">
+                <label for="bn">Black Knight</label>
+                <input type="file" id="bn" class="hidden-file-input" accept="image/*" />
+                <label for="bn" class="file-input-label">Choose File</label>
+                <div class="preview" id="bnPreview"></div>
+                <button type="button" class="clearButton" data-target="bn">Clear Field</button>
+            </div>
+            <div class="piece">
+                <label for="bp">Black Pawn</label>
+                <input type="file" id="bp" class="hidden-file-input" accept="image/*" />
+                <label for="bp" class="file-input-label">Choose File</label>
+                <div class="preview" id="bpPreview"></div>
+                <button type="button" class="clearButton" data-target="bp">Clear Field</button>
+
+            </div>
+        </div>
+
+        <!-- Board skin -->
+        <div class="pieceRow">
+            <div class="piece">
+                <label for="board">Chess Board</label>
+                <input type="file" id="board" class="hidden-file-input" accept="image/*" />
+                <label for="board" class="file-input-label">Choose File</label>
+                <div class="preview" id="boardPreview"></div> <!-- Using existing board preview -->
+                <button type="button" class="clearButton" data-target="board">Clear Field</button>
+            </div>
+        </div>
+    </div>
+    
+    <script src="options.js" type="module"></script> <!-- Update to options.js -->
+</body>
+</html>
