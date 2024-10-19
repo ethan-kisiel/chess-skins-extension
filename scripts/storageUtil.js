@@ -14,7 +14,7 @@ function storeFileAsBase64 (imageName, imageFile) {
     if (imageFile) {
         readFileAsBase64 (
             imageFile, (base64Data) => {
-                let storeData = { [`${imageName}`]: base64Data };
+                const storeData = { [`${imageName}`]: base64Data };
                 chrome.storage.local.set(storeData);
             }
         );
@@ -30,8 +30,8 @@ function getStoredFileURL (imageName) {
     return new Promise((resolve, reject) => 
     {
         chrome.storage.local.get([imageName], (result) => {
-            console.log(result);
-            console.log(result[imageName]);
+            // console.log(result);
+            // console.log(result[imageName]);
             try
             {
                 resolve(result[imageName]);
