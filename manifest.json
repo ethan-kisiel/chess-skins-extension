@@ -16,14 +16,6 @@
         "type": "module"
       }
     ],
-    "web_accessible_resources": [
-        {
-          "resources": [
-            "images/bb.png"
-          ],
-          "matches": ["https://www.chess.com/*"]
-        }
-    ],
     "permissions": [
       "storage",
       "unlimitedStorage"
