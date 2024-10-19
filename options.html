@@ -41,9 +41,10 @@
         width: 120px; /* Set a default width for all preview boxes */
         height: 80px; /* Preview height */
         border: 1px solid #666;
+        margin-top: 1px;
+        margin-bottom: 1px;
         border-radius: 4px;
         background-color: #4b4847;
-        margin-top: 8px;
         background-size: cover;
         background-position: center;
     }
@@ -78,15 +79,13 @@
 
     .clearButton {
         padding: 8px;
-        font-size: 16px;
-        background-color: #923e3e;
-        color: #ffffff;
-        border: none;
+        border: none; /* Remove default border */
         border-radius: 4px;
+        background-color: #923e3e; /* Match the upload button color */
+        color: #ffffff; /* Text color */
         cursor: pointer;
         box-shadow: 0 2px 5px #4b4847;
-        width: 120px; /* Match the width of the other elements */
-        margin-top: 8px;
+        transition: background-color 0.3s;
     }
 
     .clearButton:hover {
@@ -99,7 +98,6 @@
         border-radius: 6px;
         border: 2px solid #666;
         color: #ffffff;
-        margin-top: 20px;
         background-color: #4b4847;
         background-size: cover;
         background-position: center;
